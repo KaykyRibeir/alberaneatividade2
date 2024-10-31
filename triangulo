@@ -1,0 +1,18 @@
+import math
+
+def forma_triangulo(a, b, c):
+    if a < b + c and b < a + c and c < a + b:
+        s = (a + b + c) / 2
+        area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+        return True, area
+    else:
+        return False, (a, b, c)
+
+a = int(input("Digite o valor de a: "))
+b = int(input("Digite o valor de b: "))
+c = int(input("Digite o valor de c: "))
+triangulo, resultado = forma_triangulo(a, b, c)
+if triangulo:
+    print(f"Os lados formam um triângulo com área: {resultado:.2f}")
+else:
+    print(f"Os valores {resultado} não formam um triângulo.")
